@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery+html5烂漫爱心表白动画 - 站长素材</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+<audio autoplay="autopaly">
+  <source src="renxi.mp3" type="audio/mp3" />
+</audio>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017—06-29</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			亲爱的小美女  <span class="keyword">💅</span> 杨德静<br />
+			咱们相识已经快两年了<br />
+			<span class="comments">从一开始彼此的不成熟</span><br />
+			到现在一切都是为了让彼此更加幸福<br />
+			<span class="comments">即将走入婚姻的殿堂</span><br />
+			我有时无法尽到一个男朋友的责任<br />
+			<span class="comments">很少陪你逛街、玩耍、谈心</span><br />
+			但是我努力的一切都是为了让你更加的幸福<br />
+			<span class="comments">男人的责任感嘛，所以有时候，你懂得...</span><br />
+			<span class="keyword">我的心里</span> 永远 <span class="keyword">只有你</span>;<br />
+			<span class="keyword">那个</span> 那么那么可爱的 <span class="keyword">小女孩</span>;<br />
+			<span class="placeholder"/><span class="comments">没错，只有你</span><br />
+			<span class="placeholder"/>也只会有你<br />
+			<span class="comments">时间会证明我对你的爱</span><br />
+			<br>
+			<br>
+			我想说:<br />
+			亲爱的，感谢你的体谅;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 李先生</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2015, 12, 12);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
